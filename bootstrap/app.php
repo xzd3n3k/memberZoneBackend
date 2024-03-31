@@ -21,6 +21,11 @@ return Application::configure(basePath: dirname(__DIR__))
             '/get-schools',
             '/delete-school',
             '/delete-school/*',
+            '/get-juridical-persons',
+            '/update-juridical-person',
+            '/update-juridical-person/*',
+            '/delete-juridical-person',
+            '/delete-juridical-person/*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
