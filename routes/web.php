@@ -24,9 +24,9 @@ Route::post('/create-school', [SchoolController::class, 'createSchool']);
 Route::delete('/delete-school/{id}', [SchoolController::class, 'deleteSchool']);
 
 Route::get('/get-juridical-persons', [JuridicalPersonController::class, 'getJuridicalPersons']);
+Route::get('/get-juridical-person/{id}', [JuridicalPersonController::class, 'getJuridicalPerson']);
 
-
-Route::post('/update-juridical-person{id}', [JuridicalPersonController::class, 'updateJuridicalPerson']);
-
+Route::post('/update-juridical-person/{id}', [JuridicalPersonController::class, 'updateJuridicalPerson']);
+Route::post('/create-juridical-person', [JuridicalPersonController::class, 'createJuridicalPerson']);
 
 Route::delete('/delete-juridical-person{id}', [JuridicalPersonController::class, 'deleteJuridicalPerson']);

@@ -12,6 +12,10 @@ class JuridicalPersonController extends Controller
         return response()->json(JuridicalPerson::all());
     }
 
+    public function getJuridicalPerson($id) {
+        return response()->json(JuridicalPerson::where('id', $id)->first());
+    }
+
     public function updateJuridicalPerson($id, Request $request) {
         $person = JuridicalPerson::where('id',$id)->first();
         $incomingFields = $request->validate([
@@ -33,6 +37,27 @@ class JuridicalPersonController extends Controller
         $person->update($incomingFields);
 
         return response()->json(['message' => 'Person updated successfully!']);
+    }
+
+    public function createJuridicalPerson(Request $request) {
+        $incomingFields = $request->validate([
+            'registration_number' => ['required', Rule::unique('juridical_persons', 'registration_number')],
+            'company' => 'required',
+            'active' => 'required',
+            'payed' => 'required',
+            'street' => 'required',
+            'post_code' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'province' => 'required',
+            'email' => 'required',
+            'contact_person' => 'required',
+            'phone' => 'required',
+        ]);
+
+        JuridicalPerson::create($incomingFields);
+        return response()->json(['message' => 'Person created successfully!']);
     }
 
     public function deleteJuridicalPerson($id) {

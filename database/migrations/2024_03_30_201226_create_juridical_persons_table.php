@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('registration_number')->nullable();
-            $table->string('compant')->nullable();
+            $table->string('company')->nullable();
             $table->string('street')->nullable();
             $table->string('post_code')->nullable();
             $table->string('zip_code')->nullable();
