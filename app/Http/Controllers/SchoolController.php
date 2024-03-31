@@ -13,12 +13,12 @@ class SchoolController extends Controller
         return response()->json(School::all());
     }
 
-    public function getSchool($registration_number) {
-        return response() -> json(School::where('registration_number',$registration_number)->first());
+    public function getSchool($id) {
+        return response() -> json(School::where('id',$id)->first());
     }
 
-    public function updateSchool($registration_number, Request $request) {
-        $school = School::where('registration_number',$registration_number)->first();
+    public function updateSchool($id, Request $request) {
+        $school = School::where('id',$id)->first();
         $incomingFields = $request->validate([
             'registration_number' => ['required', Rule::unique('schools', 'registration_number')->ignore($school->id)],
             'name' => 'required',
@@ -62,8 +62,8 @@ class SchoolController extends Controller
         return response()->json(['message' => 'School created successfully!']);
     }
 
-    public function deleteSchool($registration_number) {
-        $school = School::where('registration_number',$registration_number)->first();
+    public function deleteSchool($id) {
+        $school = School::where('id',$id)->first();
         $school->delete();
 
         return response()->json(['message' => 'School has been successfully deleted!']);
