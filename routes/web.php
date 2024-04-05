@@ -29,4 +29,4 @@ Route::get('/get-juridical-person/{id}', [JuridicalPersonController::class, 'get
 Route::post('/update-juridical-person/{id}', [JuridicalPersonController::class, 'updateJuridicalPerson']);
 Route::post('/create-juridical-person', [JuridicalPersonController::class, 'createJuridicalPerson']);
 
-Route::delete('/delete-juridical-person{id}', [JuridicalPersonController::class, 'deleteJuridicalPerson']);
+Route::delete('/delete-juridical-person/{id}', [JuridicalPersonController::class, 'deleteJuridicalPerson']);
