@@ -21,18 +21,18 @@ class SchoolController extends Controller
         $school = School::where('id',$id)->first();
         $incomingFields = $request->validate([
             'registration_number' => ['required', Rule::unique('schools', 'registration_number')->ignore($school->id)],
-            'name' => 'required',
-            'principal' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'name' => 'nullable',
+            'principal' => 'nullable',
+            'phone' => 'nullable',
+            'email' => 'nullable',
             'active' => 'required',
             'payed' => 'required',
-            'street' => 'required',
-            'post_code' => 'required',
-            'zip_code' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'province' => 'required'
+            'street' => 'nullable',
+            'post_code' => 'nullable',
+            'zip_code' => 'nullable',
+            'city' => 'nullable',
+            'country' => 'nullable',
+            'province' => 'nullable'
         ]);
 
         $school->update($incomingFields);
@@ -44,18 +44,18 @@ class SchoolController extends Controller
 
         $incomingFields = $request->validate([
             'registration_number' => ['required', Rule::unique('schools', 'registration_number')],
-            'name' => 'required',
-            'principal' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
+            'name' => 'nullable',
+            'principal' => 'nullable',
+            'phone' => 'nullable',
+            'email' => 'nullable',
             'active' => 'required',
             'payed' => 'required',
-            'street' => 'required',
-            'post_code' => 'required',
-            'zip_code' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'province' => 'required'
+            'street' => 'nullable',
+            'post_code' => 'nullable',
+            'zip_code' => 'nullable',
+            'city' => 'nullable',
+            'country' => 'nullable',
+            'province' => 'nullable'
         ]);
 
         School::create($incomingFields);
