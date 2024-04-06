@@ -10,6 +10,20 @@ class JuridicalPerson extends Model
     use HasFactory;
     public $table = 'juridical_persons';
 
-    protected $fillable = ['registration_number', 'company', 'street',
-        'post_code', 'zip_code', 'city', 'country', 'province', 'email', 'contact_person', 'phone', 'active', 'payed'];
+    protected $fillable = [
+        'registration_number',
+        'company',
+        'street',
+        'post_code',
+        'zip_code',
+        'city',
+        'country',
+        'province',
+        'email',
+        'contact_person',
+        'phone',
+        'active',
+        'payed',
+        'ico',
+    ];
 }

@@ -32,7 +32,8 @@ class SchoolController extends Controller
             'zip_code' => 'nullable',
             'city' => 'nullable',
             'country' => 'nullable',
-            'province' => 'nullable'
+            'province' => 'nullable',
+            'ico' => 'nullable',
         ]);
 
         $school->update($incomingFields);
@@ -55,7 +56,8 @@ class SchoolController extends Controller
             'zip_code' => 'nullable',
             'city' => 'nullable',
             'country' => 'nullable',
-            'province' => 'nullable'
+            'province' => 'nullable',
+            'ico' => 'nullable',
         ]);
 
         School::create($incomingFields);

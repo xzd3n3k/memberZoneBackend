@@ -20,18 +20,19 @@ class JuridicalPersonController extends Controller
         $person = JuridicalPerson::where('id',$id)->first();
         $incomingFields = $request->validate([
             'registration_number' => ['required', Rule::unique('juridical_persons', 'registration_number')->ignore($person->id)],
-            'company' => 'required',
-            'street' => 'required',
-            'post_code' => 'required',
-            'zip_code' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'province' => 'required',
-            'email' => 'required',
-            'contact_person' => 'required',
-            'phone' => 'required',
+            'company' => 'nullable',
             'active' => 'required',
             'payed' => 'required',
+            'street' => 'nullable',
+            'post_code' => 'nullable',
+            'zip_code' => 'nullable',
+            'city' => 'nullable',
+            'country' => 'nullable',
+            'province' => 'nullable',
+            'email' => 'nullable',
+            'contact_person' => 'nullable',
+            'phone' => 'nullable',
+            'ico' => 'nullable',
         ]);
 
         $person->update($incomingFields);
@@ -42,18 +43,19 @@ class JuridicalPersonController extends Controller
     public function createJuridicalPerson(Request $request) {
         $incomingFields = $request->validate([
             'registration_number' => ['required', Rule::unique('juridical_persons', 'registration_number')],
-            'company' => 'required',
+            'company' => 'nullable',
             'active' => 'required',
             'payed' => 'required',
-            'street' => 'required',
-            'post_code' => 'required',
-            'zip_code' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-            'province' => 'required',
-            'email' => 'required',
-            'contact_person' => 'required',
-            'phone' => 'required',
+            'street' => 'nullable',
+            'post_code' => 'nullable',
+            'zip_code' => 'nullable',
+            'city' => 'nullable',
+            'country' => 'nullable',
+            'province' => 'nullable',
+            'email' => 'nullable',
+            'contact_person' => 'nullable',
+            'phone' => 'nullable',
+            'ico' => 'nullable',
         ]);
 
         JuridicalPerson::create($incomingFields);
