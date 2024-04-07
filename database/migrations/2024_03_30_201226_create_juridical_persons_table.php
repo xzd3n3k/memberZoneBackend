@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->boolean('active')->nullable();
             $table->boolean('payed')->nullable();
+            $table->string('ico')->nullable();
         });
     }
 

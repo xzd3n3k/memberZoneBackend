@@ -11,30 +11,34 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schools', function (Blueprint $table) {
+        Schema::create('physical_person', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('registration_number')->nullable();
-            $table->string('name')->nullable();
-            $table->string('principal')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
-            $table->boolean('active')->nullable();
-            $table->boolean('payed')->nullable();
+            $table->string('title')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('ares')->nullable();
+            $table->string('subject_of_business')->nullable();
             $table->string('street')->nullable();
             $table->string('post_code')->nullable();
             $table->string('zip_code')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
             $table->string('province')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
+            $table->boolean('active')->nullable();
+            $table->boolean('payed')->nullable();
             $table->string('ico')->nullable();
         });
     }
+
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('schools');
+        Schema::dropIfExists('physical_person');
     }
 };
