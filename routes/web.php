@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JuridicalPersonController;
+use App\Http\Controllers\PhysicalPersonController;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -30,3 +31,11 @@ Route::post('/update-juridical-person/{id}', [JuridicalPersonController::class, 
 Route::post('/create-juridical-person', [JuridicalPersonController::class, 'createJuridicalPerson']);
 
 Route::delete('/delete-juridical-person/{id}', [JuridicalPersonController::class, 'deleteJuridicalPerson']);
+
+Route::get('/get-physical-persons', [PhysicalPersonController::class, 'getPhysicalPersons']);
+Route::get('/get-physical-person/{id}', [PhysicalPersonController::class, 'getPhysicalPerson']);
+
+Route::post('/update-physical-person/{id}', [PhysicalPersonController::class, 'updatePhysicalPerson']);
+Route::post('/create-physical-person', [PhysicalPersonController::class, 'createPhysicalPerson']);
+
+Route::delete('/delete-physical-person/{id}', [PhysicalPersonController::class, 'deletePhysicalPerson']);
