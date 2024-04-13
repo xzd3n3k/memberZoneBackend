@@ -37,6 +37,14 @@ return Application::configure(basePath: dirname(__DIR__))
             '/create-physical-person',
             '/delete-physical-person',
             '/delete-physical-person/*',
+            '/get-honored-members',
+            '/get-honored-member',
+            '/get-honored-member/*',
+            '/update-honored-member',
+            '/update-honored-member/*',
+            '/create-honored-member',
+            '/delete-honored-member',
+            '/delete-honored-member/*',
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

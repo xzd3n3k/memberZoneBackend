@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HonoredMemberController;
 use App\Http\Controllers\JuridicalPersonController;
 use App\Http\Controllers\PhysicalPersonController;
 use App\Http\Controllers\SchoolController;
@@ -39,3 +40,11 @@ Route::post('/update-physical-person/{id}', [PhysicalPersonController::class, 'u
 Route::post('/create-physical-person', [PhysicalPersonController::class, 'createPhysicalPerson']);
 
 Route::delete('/delete-physical-person/{id}', [PhysicalPersonController::class, 'deletePhysicalPerson']);
+
+Route::get('/get-honored-members', [HonoredMemberController::class, 'getHonoredMembers']);
+Route::get('/get-honored-member/{id}', [HonoredMemberController::class, 'getHonoredMember']);
+
+Route::post('/update-physical-person/{id}', [HonoredMemberController::class, 'updateHonoredMember']);
+Route::post('/create-physical-person', [HonoredMemberController::class, 'createHonoredMember']);
+
+Route::delete('/delete-physical-person/{id}', [HonoredMemberController::class, 'deleteHonoredMember']);
